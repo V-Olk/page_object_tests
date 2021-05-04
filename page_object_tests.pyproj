@@ -29,6 +29,10 @@
     <Compile Include="pages\base_page.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="pages\locators.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="pages\login_page.py" />
     <Compile Include="pages\main_page.py">
       <SubType>Code</SubType>
     </Compile>
