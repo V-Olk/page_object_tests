@@ -16,7 +16,7 @@ def test_guest_can_add_product_to_basket(browser):
     product_name = product_page.get_product_name()
     product_price = product_page.get_product_price()
     product_page.should_be_add_to_basket_btn()
-    browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET).click()
+    product_page.add_product_to_basket()
 
     product_page.should_be_the_same_name_of_product(product_name)
     product_page.should_be_the_same_price_of_product(product_price)
