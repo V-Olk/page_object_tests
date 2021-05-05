@@ -117,7 +117,7 @@ class TestUserAddToBasketFromProductPage:
         product_price = self.product_page.get_product_price()
 
         self.product_page.should_be_add_to_basket_btn()
-        browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET).click()
+        self.product_page.add_product_to_basket()
 
         self.product_page.should_be_the_same_name_of_product(product_name)
         self.product_page.should_be_the_same_price_of_product(product_price)
