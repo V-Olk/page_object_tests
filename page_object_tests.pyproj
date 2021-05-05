@@ -29,6 +29,9 @@
     <Compile Include="pages\base_page.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="pages\basket_page.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="pages\locators.py">
       <SubType>Code</SubType>
     </Compile>
