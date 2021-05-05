@@ -37,10 +37,7 @@ def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page.open()  
     product_page = ProductPage(browser, browser.current_url)
 
-    #Добавляем товар в корзину 
     browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET).click()
-
-    #Проверяем, что нет сообщения об успехе с помощью is_not_element_present
     product_page.should_not_be_success_message()
 
 @pytest.mark.skip
@@ -49,7 +46,6 @@ def test_guest_cant_see_success_message(browser):
     page.open()  
     product_page = ProductPage(browser, browser.current_url)
 
-    #Проверяем, что нет сообщения об успехе с помощью is_not_element_present
     product_page.should_not_be_success_message()
 
 @pytest.mark.skip
@@ -58,11 +54,8 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page = MainPage(browser, link)
     page.open()  
     product_page = ProductPage(browser, browser.current_url)
-    
-    #Добавляем товар в корзину
     browser.find_element(*ProductPageLocators.BTN_ADD_TO_BASKET).click()
 
-    # Проверяем, что нет сообщения об успехе с помощью is_disappeared
     product_page.should_dissapear_success_message()
 
 @pytest.mark.skip
@@ -83,16 +76,11 @@ def test_guest_can_go_to_login_page_from_product_page(browser):
 
 def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     link = "http://selenium1py.pythonanywhere.com/en-gb/catalogue/the-city-and-the-stars_95/"
-    #Гость открывает главную страницу 
+
     page = ProductPage(browser, link)
     page.open()
-    #Переходит в корзину по кнопке в шапке сайта
     page.go_to_basket_page()
     
     basket_page = BasketPage(browser, browser.current_url)
-    #basket_page.should_be_basket_page()
-
-    #Ожидаем, что в корзине нет товаров
     basket_page.should_be_empty()
-    #Ожидаем, что есть текст о том что корзина пуста 
     basket_page.should_be_empty_message()
