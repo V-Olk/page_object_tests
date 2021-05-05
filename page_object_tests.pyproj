@@ -36,7 +36,13 @@
     <Compile Include="pages\main_page.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="pages\product_page.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="test_main_page.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test_product_page.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="__init__.py">
