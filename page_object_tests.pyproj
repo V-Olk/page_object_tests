@@ -64,6 +64,10 @@
     </Interpreter>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="pytest.ini">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
   <ItemGroup>
