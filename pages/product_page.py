@@ -17,13 +17,13 @@ class ProductPage(BasePage):
         assert self.is_element_present(*ProductPageLocators.BTN_ADD_TO_BASKET), "'Add to basket' button is not presented"
 
     def should_be_the_same_name_of_product(self, name):
-        assert self.is_element_present(By.CSS_SELECTOR, "#messages strong"), "Messages are not presented"
-        elements = self.browser.find_elements(By.CSS_SELECTOR, "#messages strong")
+        assert self.is_element_present(*ProductPageLocators.ADDED_PRODUCT_INFO), "Messages are not presented"
+        elements = self.browser.find_elements(*ProductPageLocators.ADDED_PRODUCT_INFO)
         assert elements[0].text == name, "Different name of product"
 
     def should_be_the_same_price_of_product(self, price):
-        assert self.is_element_present(By.CSS_SELECTOR, "#messages strong"), "Messages are not presented"
-        elements = self.browser.find_elements(By.CSS_SELECTOR, "#messages strong")
+        assert self.is_element_present(*ProductPageLocators.ADDED_PRODUCT_INFO), "Messages are not presented"
+        elements = self.browser.find_elements(*ProductPageLocators.ADDED_PRODUCT_INFO)
         assert elements[2].text == price, "Different price of product"
 
     def should_not_be_success_message(self):
@@ -31,5 +31,3 @@ class ProductPage(BasePage):
 
     def should_dissapear_success_message(self):
         assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is not disappeared, but should be"
-
-

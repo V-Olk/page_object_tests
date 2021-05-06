@@ -19,7 +19,7 @@ class ProductPageLocators():
     PRODUCT_NAME = (By.CSS_SELECTOR,".product_main h1")
     PRODUCT_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
-
+    ADDED_PRODUCT_INFO = (By.CSS_SELECTOR, "#messages strong")
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
